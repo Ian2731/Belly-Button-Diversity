@@ -53,12 +53,9 @@ function buildCharts(sample) {
         }
       }
     ]
-  })
-}
-
 
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
-    
+  
     // Pie chart
     var pie_data = [{
       values: sample_values.slice(0,10),
@@ -66,7 +63,9 @@ function buildCharts(sample) {
       hovertext: otu_labels.slice(0, 10),
       type: 'pie'
     }]
-    
+    Plotly.newPlot("pie", pie_data);
+  });
+  }    
 function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
